@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<yml_catalog date="2016-07-07 04:30">
+    <shop>
+        <name>SHOP</name>
+        <company>SHOP</company>
+        <url>http://www.shop.com</url>
+        <categories>
+            <category id="1">Мобильные телефоны</category>
+            <category id="2" parentId="1">Apple</category>
+            <category id="3" parentId="1">Xiaomi</category>
+            <category id="4">Планшеты</category>
+            <category id="5" parentId="4">Samsung</category>
+            <category id="6" parentId="4">LG</category>
+        </categories>
+        <offers>
+            <offer id="1" available="true">
+                <url>http://www.shop.com/detail.php?ID=1</url>
+                <price>3000</price>
+                <optprice>2000</optprice>
+                <categoryId>2</categoryId>
+                <picture>http://www.shop.com/jpeg</picture>
+                <name>Apple Iphone 7</name>
+                <articul>1123123</articul>
+                <vendor>APPLE</vendor>
+                <description>Описание товара</description>
+                <extprops>
+                    <season>Красный</season>
+                    <name>Iphone 7</name>
+                </extprops>
+                <statusNew>true</statusNew>
+                <statusAction>false</statusAction>
+                <statusTop>false</statusTop>
+            </offer>
+            <offer id="2" available="true">
+                <url>http://www.shop.com/detail.php?ID=2</url>
+                <price>5000</price>
+                <optprice>4000</optprice>
+                <categoryId>3</categoryId>
+                <picture>http://www.shop.com/jpeg</picture>
+                <name>Xiaomi Phone</name>
+                <articul>x912</articul>
+                <vendor>Xiaomi</vendor>
+                <description>Описание xiaomi</description>
+                <extprops>
+                    <season>Черный</season>
+                    <name>A56</name>
+                </extprops>
+                <statusNew>true</statusNew>
+                <statusAction>true</statusAction>
+                <statusTop>false</statusTop>
+            </offer>
+            <offer id="3" available="true">
+                <url>http://www.shop.com/detail.php?ID=3</url>
+                <price>50000</price>
+                <optprice>14000</optprice>
+                <categoryId>5</categoryId>
+                <picture>http://www.shop.com/jpeg</picture>
+                <name>Samsung Tablet</name>
+                <articul>st1912</articul>
+                <vendor>Samsung</vendor>
+                <description>Описание samsung</description>
+                <extprops>
+                    <season>Серый</season>
+                    <name>Планшет Samsung</name>
+                </extprops>
+                <statusNew>true</statusNew>
+                <statusAction>true</statusAction>
+                <statusTop>true</statusTop>
+            </offer>
+            <offer id="4" available="true">
+                <url>http://www.shop.com/detail.php?ID=4</url>
+                <price>3400</price>
+                <optprice>400</optprice>
+                <categoryId>6</categoryId>
+                <picture>http://www.shop.com/jpeg</picture>
+                <name>LG tablet</name>
+                <articul>lg4412</articul>
+                <vendor>LG</vendor>
+                <description>Описание lg</description>
+                <extprops>
+                    <season>Синий</season>
+                    <name>A526</name>
+                </extprops>
+                <statusNew>true</statusNew>
+                <statusAction>false</statusAction>
+                <statusTop>true</statusTop>
+            </offer>
+        </offers>
+    </shop>
+</yml_catalog>
