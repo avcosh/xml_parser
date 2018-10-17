@@ -8,20 +8,20 @@ $xml = simplexml_load_string($xml_text);
 foreach ($xml->xpath('/yml_catalog/shop') as $element) {
    
 	
-	    $sql = "INSERT INTO shop (shop_name, company, shop_url) VALUES (:name, :company, :url)";
+	$sql = "INSERT INTO shop (shop_name, company, shop_url) VALUES (:name, :company, :url)";
         $result = $db->prepare($sql);
         $result->bindParam(':name', $element->name, PDO::PARAM_STR);
-		$result->bindParam(':company', $element->company, PDO::PARAM_STR);
-		$result->bindParam(':url', $element->url, PDO::PARAM_STR);
+        $result->bindParam(':company', $element->company, PDO::PARAM_STR);
+	$result->bindParam(':url', $element->url, PDO::PARAM_STR);
         $result->execute();
 		
-    foreach ($element->xpath('categories/category') as $category) {
+foreach ($element->xpath('categories/category') as $category) {
       
-		$sql = "INSERT INTO category (category_id, parent_id, name) VALUES (:category_id, :parent_id, :name )";
-		$result = $db->prepare($sql);
+	$sql = "INSERT INTO category (category_id, parent_id, name) VALUES (:category_id, :parent_id, :name )";
+	$result = $db->prepare($sql);
         $result->bindParam(':category_id', $category->attributes()->id, PDO::PARAM_INT);
-		$result->bindParam(':parent_id', $category->attributes()->parentId, PDO::PARAM_INT);
-		$result->bindParam(':name', $category, PDO::PARAM_STR);
+	$result->bindParam(':parent_id', $category->attributes()->parentId, PDO::PARAM_INT);
+	$result->bindParam(':name', $category, PDO::PARAM_STR);
         $result->execute();
 		
     }
@@ -30,9 +30,9 @@ foreach ($xml->xpath('/yml_catalog/shop') as $element) {
 		
 		
 		$sql = "INSERT INTO offers (id, available, url, price, optprice, category_id, picture, name, articul, vendor, description, 
-		         extprops_season, extprops_name, status_new, status_action, status_top) VALUES (:id, :available, :url, 
-		         :price, :optprice, :category_id, :picture, :name, :articul, :vendor,
-                 :description, :extprops_season, :extprops_name, :status_new, :status_action, :status_top)";
+		        extprops_season, extprops_name, status_new, status_action, status_top) VALUES (:id, :available, :url, 
+		        :price, :optprice, :category_id, :picture, :name, :articul, :vendor,
+                        :description, :extprops_season, :extprops_name, :status_new, :status_action, :status_top)";
 		$result = $db->prepare($sql);
 		$result->bindParam(':id', $item->attributes()->id, PDO::PARAM_INT);
 		$result->bindParam(':available', $item->attributes()->available, PDO::PARAM_STR);
